@@ -1,4 +1,6 @@
-#change
+# Addet to test security process
+USER = "root"
+PASSORD = "Secret"
 def add(a, b):
     """Add two numbers and return the result."""
     return a + b
