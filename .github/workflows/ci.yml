@@ -65,13 +65,7 @@ jobs:
           format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
-
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          image-ref: 'docker.io/cencerro/calculator:${{ github.sha }}'
-          format: 'sarif'
-          output: 'trivy-results.sarif'
+          scanners: 'vuln,config,secret'  # Agrega config y secret
 
 
       # Upload Trivy scan results to GitHub Security tab
